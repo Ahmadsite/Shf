@@ -1,0 +1,170 @@
+<?php
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <title>Single Haulage Fee (SHF)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="blocker">
+        <div class="block-spinner"></div>
+        <p class="block">Sorry, the site have stopped working. pay for your subscription to continue</p>
+        <input type="number" class="code" onchange="codeSwap()">
+    </div>
+    <div class="doc-container">
+        <div class="container">
+        <div class="abbr">Shf</div>
+        <div class="full-mean">Single Haulage Fee</div>
+        <div class="date"></div>
+        <div class="break-point">
+             ===========================
+        </div>
+        <div class="user-info">
+            
+            <div class="payer-full-name">
+                <span class="payer-name">Payer: </span>
+                <span class="payer-value"></span>
+            </div>
+            <div class="payer">
+                <span class="payer-title">Phone Number: </span><span class="phone-number"></span>
+            </div>    
+            <div class="payer">
+                <span class="vehicle">Vehicle Number: </span>
+                <span class="vehicle-number"></span>
+            </div>
+            <div class="vehicle">
+                <span class="vehicle-title">Vehicle Type: </span>
+                <span class="vehicle-type"></span>
+            </div>
+            <div class="payer">
+                <span class="state-origin">Origin State: </span><span class="origin-state"></span>
+            </div>
+            <div class="payer">
+                <span class="payer-title">Origin LGA:</span><span class="origin-lga"></span>
+            </div>
+            <div class="payer">
+                <span class="arrival-state">Destination State:  </span><span class="destination-state"></span>
+            </div>
+            <div class="payer-lga">
+                <span class="payer-title">Destination LGA: </span><span class="destination-lga"></span>
+            </div>
+            <div class="payer">
+                <span class="payer-title">Contact: </span><span class="contact-value"></span>
+            </div>
+            <div class="reference-transaction">
+                <div class="total-transaction">
+                    <span class="payer-title">Transaction Reference: </span>
+                    <span> 220232</span>
+                    
+                </div>
+                <span class="other-reference">
+                        
+                </span>
+
+                
+            </div>
+            <div class="payer">
+                <span class="payer-title">Terminal ID:</span>
+                <span class="terminal-id">
+201120TD
+                </span>
+            </div>
+            <div class="payer">
+                <span class="payer-title">Date: </span><span class="today-date"></span>
+            </div>
+        </div>
+        <div class="break-point">
+             ===========================
+        </div>
+        <div class="payment">
+            <div class="amount-paid"><div class="amount-name">Amount Paid:</div><div class="amount" name="amount"></div></div>
+            <div class="stats">
+                <div class="status-name">Status:  </div><div class="status">Approved</div>
+            </div>
+            <div class="qr-img">
+                <img src="" class="qr-image">
+            </div>
+        <div class="break-point">
+             ===========================
+        </div>
+        </div>
+        <p class="power">powered by Citiserve</p>
+        </div>
+    </div>
+    <div class="buttons-holder">
+        <div class="print-button">
+            <button class="printer">Print Reciept</button>
+            <button class="add-another">Add</button>
+        </div>
+        <div class="control-buttons">
+            <button class="reset">Reset</button>
+            
+        
+        
+        </div>
+    </div>
+    <form action="save_data.php" method="post" class="input-info" id="dataForm">
+        <label>Full Name:</label>
+        <input type="text" name="full_name" id="name-input" placeholder="Enter Full Name" required>
+        <label>Mobile Number:</label>
+        <input type="number" name="mobile_number" id="phone-input" placeholder="Enter Mobile Number" required>
+        <label>Vehicle Number:</label>
+        <input type="text" name="vehicle_number" id="vehicle-number-input" placeholder="Enter Vehicle Number" required>
+        <label>Vehicle Type:</label>
+        <select name="vehicle_type" id="vehicle-type-input" onchange="addAmount()">
+            <option selected disabled>Select Vehicle Type</option>
+            <option value="12/14 Tyres and its equivalent">12/14 Tyres and its equivalent</option>
+            <option value="18 Tyres and its equivalent">18 Tyres and its equivalent</option>
+            <option value="22 Tyres and its equivalent">22 Tyres and its equivalent</option>
+            <option value="Luxury Buses and its equivalent">Luxury Buses and its equivalent</option>
+            <option value="Pick up and its equivalent (4 Tyres)">Pick up and its equivalent (4 Tyres)</option>
+            <option value="Pick up and Heavy Duties 6/8 Tyres">Pick Up and Heavy Duties 6/8 Tyres</option>
+        </select>
+        <label>Origin State:</label>
+        <input type="text" name="origin_state" id="origin-state-input" placeholder="Enter Origin State" required>
+        <label>Origin LGA:</label>
+        <input type="text" name="origin_lga" id="origin-lga-input" placeholder="Enter Origin LGA" required>
+        <label>Destination State:</label>
+        <input type="text" name="destination_state" id="destination-state-input" placeholder="Enter Destination State" required>
+        <label>Destination LGA:</label>
+        <input type="text" name="destination_lga" id="destination-lga-input" placeholder="Enter Destination LGA" required>
+        <label>Contact:</label>
+        <input type="number" name="contact" id="contact-input" placeholder="Enter Contact" required>
+        <label>Terminal ID:</label>
+        <select name="terminal_id" id="terminal-input">
+            <option value="201167SX">201167SX</option>
+            <option value="201120TD">201120TD</option>
+            <option value="201104TD">201104TD</option>
+            <option value="201182SX">201182SX</option>
+        </select>
+        
+        <label>Amount:</label>
+        <div class="amount-input"></div>
+        <button class="done" onclick="done()">Done</button>
+        
+    </form>
+    
+
+        
+    
+    <script src="javascript/script.js">
+        var allText = document.body.innerText;
+        allText.style.transform = "scale(1.2)"
+    </script>
+
+</body>
+</html>
