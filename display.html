@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Database Data</title>
+    <style>
+        /* Add some basic styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Database Data</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Mobile Number</th>
+                <th>Vehicle Number</th>
+                <th>Vehicle Type</th>
+                <th>Origin State</th>
+                <th>Origin LGA</th>
+                <th>Destination State</th>
+                <th>Destination LGA</th>
+                <th>Contact</th>
+                <th>Terminal ID</th>
+                <th>Submission Datetime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "fetch_data.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    var tbody = document.querySelector("#data-table tbody");
+                    tbody.innerHTML = ""; // Clear existing data
+                    data.forEach(function(row) {
+                        var tr = document.createElement("tr");
+                        Object.keys(row).forEach(function(key) {
+                            var td = document.createElement("td");
+                            td.textContent = row[key];
+                            tr.appendChild(td);
+                        });
+                        tbody.appendChild(tr);
+                    });
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

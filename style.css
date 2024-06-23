@@ -1,0 +1,533 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.blocker{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: #fff;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.blocker p{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.block-spinner{
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    border: 10px solid #ddd;
+    border-bottom: 10px solid blue;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.doc-container{
+    display: none;
+    width: 350px;
+}
+.container{
+    margin-right: -40px;
+}
+
+span, .date{
+    font-weight: 300;
+    font-size: 7.5vw;
+}
+.total-transaction{
+    display: block;
+}
+.transaction-reference{
+    margin-left: 3px;
+    
+}
+.total-transaction{
+    display: flex;
+}
+.break-point{
+    font-weight: ;
+    font-size: 7.5vw;
+    line-height: 1;
+}
+.abbr{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-family: verdana;
+}
+.full-mean{
+    font-size: 10vw;
+    font-family: verdana;
+}
+.user-info div, .user-info span{
+    font-family: font-family: verdana;
+    font-weight: 300;
+}
+.amount-paid, .stats{
+    display: flex;
+}
+.payer-lga{
+    display: block;
+}
+.vehicle-number, .origin-state, .destination-state, .transaction-reference{
+    text-transform: uppercase;
+}
+.payer-full-name{
+    display: block;
+}
+.container .payer:nth-child(1){
+    margin-right: 3px;
+}
+.status{
+    margin-left: 5px;
+}
+.amount-name, .status-name, .status, .amount{
+    font-size: 10vw;
+    font-weight: 500;
+    font-family: verdana;
+}
+.status{
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 10vw;
+}
+.amount-name{
+    margin-right: 5px;
+}
+.input-info{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: 0.4s;
+}
+label{
+    width: 85%;
+    text-align: left;
+    margin-top: 15px;
+    max-width: 500px;
+}
+.amount-input{
+    font-size: 32px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.input-info input, .amount-input, select{
+    width: 85%;
+    height: 40px;
+    margin: 5px 0px;
+    padding-left: 5px;
+    border: none;
+    background: #e0e0e0;
+    outline: none;
+    max-width: 500px;
+}
+.input-info button{
+    width: 70%;
+    height: 40px;
+    margin-bottom: 35px;
+    margin-top: 15px;
+    background: #24beff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-family: serif;
+}
+.payer span{
+    margin-right: 2px;
+}
+.qr-img{
+    width: 350px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -25px:
+}
+.user-info div, .user-info span{
+    font-weight: 300;
+    font-family: verdana;
+}
+.qr-img img{
+    width: 320px;
+    height: 320px;
+    
+}
+.buttons-holder{
+    width: 85%;
+    max-width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.print-button{
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.printer{
+    display: flex;
+}
+.control-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+.control-buttons button:hover{
+    transform: scale(1.1);
+}
+.reset, .add-another{
+    width: 45%;
+}
+.reset{
+    background: #FF0200;
+    border: 2px solid #FF0200;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.add-another{
+    background: #005BFF;
+    border: 2px solid #005BFF;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.print-button button{
+    width: 45%;
+    height: 35px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 25px;
+    background: #005BFF;
+    color: #fff;
+    font-weight: bold;
+    border: 4px solid #005BFF;
+}
+.print-button button:hover{
+    background: transparent;
+    color: #005BFF;
+}
+.power{
+    font-size: 7.5vw;
+}
+@media only screen and (min-width: 800px){
+*{
+    padding: 0;
+    margin: 0;
+}
+.blocker{
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    z-index: 1000000000;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.blocker p{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+.block-spinner{
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    border: 10px solid #ddd;
+    border-bottom: 10px solid blue;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+    padding-bottom: 40px;
+}
+.doc-container{
+    display: none;
+    width: 300px;
+    padding:20px 83px 20px 47px;
+}
+.container{
+    width: 250px;
+    padding-right: 10px;
+    
+    paddding-bottom: 25px;
+}
+span{
+    font-weight: 300;
+    font-size: 14px;
+}
+.total-transaction{
+    display: block;
+}
+.transaction-reference{
+    margin-left: 3px;
+    
+}
+.total-transaction{
+    display: flex;
+}
+.break-point{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: .7;
+    transform: scaleX(.85);
+    letter-spacing: 2px;
+    margin-left: -20px;
+}
+.abbr{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 27px;
+    font-family: verdana;
+}
+.full-mean{
+    font-size: 27px;
+    font-family: verdana;
+}
+
+.user-info div, .user-info span{
+    font-family: verdana;
+    font-weight: 300;
+    font-size: 20px;
+}
+.amount-paid, .stats{
+    display: flex;
+}
+.payer-lga{
+    display: block;
+}
+.payer-value, .vehicle-number, .origin-state, .destination-state, .transaction-reference{
+    text-transform: uppercase;
+}
+.payer-full-name{
+    display: block;
+}
+.container .payer:nth-child(1){
+    margin-right: 3px;
+}
+.status{
+    margin-left: 5px;
+}
+.amount-name, .status-name, .status, .amount{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: verdana;
+}
+.status{
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 20px;
+}
+.amount-name{
+    margin-right: 5px;
+}
+.input-info{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: 0.4s;
+}
+label{
+    width: 85%;
+    text-align: left;
+    margin-top: 15px;
+    max-width: 500px;
+}
+.amount-input{
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.input-info input, .amount-input, select{
+    width: 85%;
+    height: 40px;
+    margin: 5px 0px;
+    padding-left: 5px;
+    border: none;
+    background: #e0e0e0;
+    border-bottom: 3px solid #005bff;
+    outline: none;
+    max-width: 500px;
+}
+.input-info button{
+    width: 70%;
+    height: 40px;
+    margin-bottom: 35px;
+    margin-top: 15px;
+    background: #005bff;
+    border: 2px solid #005bff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.payer span{
+    margin-right: 2px;
+}
+.qr-img{
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -25px:
+}
+.user-info div, .user-info span{
+    font-weight: 300;
+    font-family: verdana;
+}
+.qr-img img{
+    width: 80%;
+    height: 80%;
+    margin-left: 0px;
+    margin-left: -20px;
+    filter: contrast(110%) brightness(105%) saturate(120%) grayscale(10%) blur(0.3px);
+}
+.buttons-holder{
+    width: 85%;
+    max-width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.print-button{
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+.printer{
+    display: flex;
+}
+.control-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+.control-buttons button:hover{
+    transform: scale(1.1);
+}
+.reset, .add-another{
+    width: 45%;
+}
+.reset{
+    background: #FF0200;
+    border: 2px solid #FF0200;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.add-another{
+    background: #005BFF;
+    border: 2px solid #005BFF;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.print-button button{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 25px;
+    background: #005BFF;
+    color: #fff;
+    font-weight: bold;
+    border: 4px solid #005BFF;
+}
+.print-button button:hover{
+    background: transparent;
+    color: #005BFF;
+}
+@media only screen and (min-width: 800px){
+    .input-info{
+        width: 50%;
+        
+    }
+    
+}
+}
